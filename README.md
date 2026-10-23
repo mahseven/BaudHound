@@ -291,4 +291,11 @@ auto-baud in particular is absent from the closest matches above.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT, Copyright 2026 MAH7 and the BaudHound contributors. See [LICENSE](LICENSE).
+
+The firmware builds against libraries with their own licences, fetched by the Arduino IDE and
+not stored in this repository: the Espressif ESP32 Arduino core (LGPL-2.1, mbedTLS inside it
+Apache-2.0), ESP Async WebServer and Async TCP by ESP32Async (LGPL-3.0). If you distribute a
+compiled binary, ship their licence texts and a pointer to their source with it.
+
+This is AI-assisted work.
