@@ -1,7 +1,7 @@
 # Contributing
 
 Bug reports, patches and board reports are welcome: open an issue or a pull request on
-https://github.com/info-mah7/BaudHound.
+https://github.com/mahseven/BaudHound.
 
 ## Licence of contributions
 

@@ -27,7 +27,7 @@ Built for bench work: probe a device's TTL serial port, and BaudHound hunts for 
 - **Active "wake" probe** — optionally sends an Enter to nudge a silent console into responding, then detects.
 - **RX/TX auto-swap** — reversed the data wires? It flips orientation and recovers on its own.
 - **Captive-portal setup** — join the open AP, a page pops up; from there you can join your own WiFi.
-- **Discovery** - answers a UDP broadcast so [BaudHoundTerm](https://github.com/info-mah7/baudhoundterm) finds it on the network without you looking up its IP (firmware 1.4+, can be turned off).
+- **Discovery** - answers a UDP broadcast so [BaudHoundTerm](https://github.com/mahseven/baudhoundterm) finds it on the network without you looking up its IP (firmware 1.4+, can be turned off).
 - **Status LEDs** — onboard RGB shows network state; optional external RGB shows link state.
 
 ---
@@ -148,7 +148,7 @@ Other clients: `openssl s_client -quiet -connect <ip>:992`.
 Details, fingerprint checks and how to replace the certificate: [docs/TLS.md](docs/TLS.md).
 
 ### 5. BaudHoundTerm (Windows)
-[BaudHoundTerm](https://github.com/info-mah7/baudhoundterm) is the desktop console for BaudHound. Its **BaudHound** button lists the devices on the networks the PC is on and opens one, over TLS when the device has it, in a tab set up for it: local echo and line editing, these `~` commands on the right-click menu, logging, and reconnect. It can also save the device as a shortcut; saving it again after its DHCP address changes moves the shortcut to the new address.
+[BaudHoundTerm](https://github.com/mahseven/baudhoundterm) is the desktop console for BaudHound. Its **BaudHound** button lists the devices on the networks the PC is on and opens one, over TLS when the device has it, in a tab set up for it: local echo and line editing, these `~` commands on the right-click menu, logging, and reconnect. It can also save the device as a shortcut; saving it again after its DHCP address changes moves the shortcut to the new address.
 
 ---
 
