@@ -1,8 +1,8 @@
 /*
  * ESP32-WROOM Companion Debug Target
  * ----------------------------------
- * A device-under-test simulator for the ESP32-S3 Wireless Serial Console
- * (mobile_TTL_Com_term). It emits console-style UART traffic and answers
+ * A device-under-test simulator for BaudHound, the ESP32-S3 wireless serial
+ * console. It emits console-style UART traffic and answers
  * commands, so you can exercise the console's features against a known source:
  *   - passive baud autodetect  (steady heartbeat stream)
  *   - wake-probe / ~probe       (quiet mode: silent until it receives Enter)
