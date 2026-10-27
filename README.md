@@ -157,8 +157,8 @@ Details, fingerprint checks and how to replace the certificate: [docs/TLS.md](do
 Firmware 1.4 and later listen on **UDP 47023**. A datagram starting with `BAUDHOUND?` gets one JSON object back, sent to the asker:
 
 ```json
-{"baudhound":1,"name":"BaudHound-41D0","fw":"1.4","ip":"192.168.1.50","apip":"192.168.4.1",
- "sta":true,"ssid":"bench","lanip":"192.168.1.50","telnet":23,"http":80,
+{"baudhound":1,"name":"BaudHound-41D0","fw":"1.4","ip":"198.51.100.50","apip":"192.168.4.1",
+ "sta":true,"ssid":"bench","lanip":"198.51.100.50","telnet":23,"http":80,
  "baud":0,"rate":115200,"scanning":false,
  "tls":992,"tlsfp":"SHA256:i53p547UBDcVHZFugau3n9X6ThfqnefwLnDUkfkT+XY","locked":false}
 ```
@@ -279,11 +279,11 @@ that lineage and adds a pocket ESP32-S3 form factor with automatic baud
 detection.
 
 - **[esp-link](https://github.com/jeelabs/esp-link)** (jeelabs) — the canonical ESP8266 WiFi-to-serial bridge with telnet, a web console, and flash programming. *Closest predecessor (single UART, no auto-baud).*
-- **[ESP32-Serial-Bridge](https://github.com/AlphaLima/ESP32-Serial-Bridge)** — transparent WiFi(TCP)-to-3×UART bridge. *Adjacent, raw transport only.*
-- **[esp32-remote-serial-console](https://github.com/electronicayciencia/esp32-remote-serial-console)** — ESP32-C3 out-of-band telnet console for headless access. *Similar use-case, telnet-only.*
+- **[ESP32-Serial-Bridge](https://github.com/AlphaLima/ESP32-Serial-Bridge)** (AlphaLima) — transparent WiFi(TCP)-to-3×UART bridge. *Adjacent, raw transport only.*
+- **[esp32-remote-serial-console](https://github.com/electronicayciencia/esp32-remote-serial-console)** (electronicayciencia) — ESP32-C3 out-of-band telnet console for headless access. *Similar use-case, telnet-only.*
 - **[uart-bridge](https://github.com/Tymbark7372/uart-bridge)** (Tymbark7372) — ESP32-C3 pocket console with web terminal + telnet + OTA. *Closest feature match; baud is manual.*
-- **[ESP32-UART-Bridge](https://github.com/zvldz/ESP32-UART-Bridge)** — high-throughput universal UART↔USB/WiFi bridge. *Adjacent, general-purpose.*
-- **[RetroWiFiModem](https://github.com/mecparts/RetroWiFiModem)** — ESP8266 RS-232↔WiFi Hayes modem for vintage gear. *Adjacent, different niche.*
+- **[ESP32-UART-Bridge](https://github.com/zvldz/ESP32-UART-Bridge)** (zvldz) — high-throughput universal UART↔USB/WiFi bridge. *Adjacent, general-purpose.*
+- **[RetroWiFiModem](https://github.com/mecparts/RetroWiFiModem)** (mecparts) — ESP8266 RS-232↔WiFi Hayes modem for vintage gear. *Adjacent, different niche.*
 
 BaudHound's distinguishing combination is ESP32-S3 + pocket form factor + web UI
 **and** telnet **and** USB **plus automatic baud-rate detection** — the
@@ -298,6 +298,18 @@ Written by MAH7 with Claude (Anthropic) as co-author. See [AUTHORS](AUTHORS).
 MIT, Copyright 2026 MAH7 and the BaudHound contributors. See [LICENSE](LICENSE).
 
 The firmware builds against libraries with their own licences, fetched by the Arduino IDE and
-not stored in this repository: the Espressif ESP32 Arduino core (LGPL-2.1, mbedTLS inside it
-Apache-2.0), ESP Async WebServer and Async TCP by ESP32Async (LGPL-3.0). If you distribute a
-compiled binary, ship their licence texts and a pointer to their source with it.
+not stored in this repository (versions it is built with in brackets):
+
+- the Espressif ESP32 Arduino core (3.3.12), LGPL-2.1-or-later, some files Apache-2.0, Copyright
+  Espressif Systems and contributors;
+- ESP-IDF (5.5.5), which that core links in as prebuilt libraries, Apache-2.0, Copyright Espressif
+  Systems, and with it:
+  - lwIP, the network stack, BSD-3-Clause, Copyright (c) 2001-2004 Swedish Institute of Computer
+    Science;
+  - FreeRTOS, MIT, Copyright Amazon.com, Inc. or its affiliates;
+  - mbedTLS, Apache-2.0 OR GPL-2.0-or-later (used under Apache-2.0), Copyright The Mbed TLS
+    Contributors;
+- ESP Async WebServer (3.12.0) and Async TCP (3.5.0) by ESP32Async, LGPL-3.0-or-later, Copyright
+  2016-2026 Hristo Gochkov, Mathieu Carbou, Emil Muratov, Will Miles.
+
+If you distribute a compiled binary, ship their licence texts and a pointer to their source with it.
